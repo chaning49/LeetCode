@@ -5,8 +5,8 @@ class Solution {
         
         while (start < end) {
             int mid = (start + end) / 2;
-            if (mid % 2 == 1) mid--;
-            if (nums[mid] == nums[mid + 1]) start = mid + 2;
+            if (mid % 2 == 1) mid--; // mid 값이 홀수라면 왼쪽 값으로 맞춰준다.
+            if (nums[mid] == nums[mid + 1]) start = mid + 2; // mid 값의 오른쪽이 같으면 한 쌍이 존재하는 값이므로 
             else end = mid;
         }
         
