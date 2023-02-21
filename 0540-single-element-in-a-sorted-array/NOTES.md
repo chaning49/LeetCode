@@ -10,7 +10,8 @@
 - 즉, mid 값을 기준으로 다음 값과 비교하면 어느 위치에 정답이 있는지 알 수 있다.
 ​
 ### 이전 정답 코드
-Runtime: 1 ms
+Runtime: 1 ms 
+<br>
 Memory Usage: 48.3 MB
 ```java
 class Solution {
