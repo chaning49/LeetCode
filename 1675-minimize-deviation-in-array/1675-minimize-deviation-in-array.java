@@ -1,7 +1,5 @@
 class Solution {
     public int minimumDeviation(int[] nums) {
-        int end = nums.length;
-        
         TreeSet<Integer> treeSet = new TreeSet<>();
         for (int num : nums) {
             if (num % 2 == 1) num *= 2;
