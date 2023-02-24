@@ -9,9 +9,7 @@ class Solution {
         int ans = treeSet.last() - treeSet.first();
         
         while (treeSet.last() % 2 == 0) {
-            int temp = treeSet.last();
-            treeSet.pollLast();
-            treeSet.add(temp / 2);
+            treeSet.add(treeSet.pollLast() / 2);
             ans = Math.min(ans, treeSet.last() - treeSet.first());
         }
         
