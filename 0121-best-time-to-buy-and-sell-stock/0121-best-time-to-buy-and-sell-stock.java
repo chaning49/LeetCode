@@ -9,7 +9,7 @@ class Solution {
             else
                 pivot = prices[i];
         }
-        if (ans == 100000) return 0;
+        
         return ans;
     }
 }
