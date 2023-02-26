@@ -2,7 +2,7 @@ class Solution {
   public int minDistance(String word1, String word2) {
     final int m = word1.length();
     final int n = word2.length();
-    // dp[i][j] := min # of operations to convert word1[0..i) to word2[0..j)
+    
     int[][] dp = new int[m + 1][n + 1];
 
     for (int i = 1; i <= m; ++i)
