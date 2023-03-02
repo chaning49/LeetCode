@@ -7,19 +7,57 @@
 ```java
 // 배열의 길이만 고려한 코드
 class Solution {
-public int compress(char[] chars) {
-Map<Character, Integer> map = new HashMap<>();
-int ans = 0;
-for (char c : chars) {
-Character ch = Character.valueOf(c);
-if (!map.containsKey(ch))
-map.put(ch, 1);
-else
-map.put(ch, map.get(ch) + 1);
+    public int compress(char[] chars) {
+        Map<Character, Integer> map = new HashMap<>();
+        int ans = 0;
+        
+        for (char c : chars) {
+            Character ch = Character.valueOf(c);
+            if (!map.containsKey(ch)) 
+                map.put(ch, 1);
+            else
+                map.put(ch, map.get(ch) + 1);
+        }
+        
+        for (Character mc : map.keySet()) {
+            if (map.get(mc) < 10) ans += 2;
+            else if (map.get(mc) >= 10 && map.get(mc) < 100) ans += 3;
+            else if (map.get(mc) >= 100 && map.get(mc) < 1000) ans += 4;
+            else ans += 5;
+        }
+        
+        return ans;
+    }
 }
-for (Character mc : map.keySet()) {
-if (map.get(mc) < 10) ans += 2;
-else if (map.get(mc) >= 10 && map.get(mc) < 100) ans += 3;
-else if (map.get(mc) >= 100 && map.get(mc) < 1000) ans += 4;
-else ans += 5;
-Character ch = Character.valueOf(c);
+```
+
+```java
+// 중복 문자열을 따로 처리해주지 않아서 통과되지 못한 코드
+class Solution {
+    public int compress(char[] chars) {
+        Map<Character, Integer> map = new HashMap<>();
+        int ans = 0;
+        
+        for (char c : chars) {
+            Character ch = Character.valueOf(c);
+            if (!map.containsKey(ch)) 
+                map.put(ch, 1);
+            else
+                map.put(ch, map.get(ch) + 1);
+        }
+        
+        for (Character ch : map.keySet()) {
+            int num = map.get(ch);
+            chars[ans++] = ch.charValue();
+            if (num == 1) continue;
+            else {
+                for (char c : String.valueOf(num).toCharArray()) {
+                    chars[ans++] = c;
+                }
+            }
+        }
+        
+        return ans;
+    }
+}
+```
