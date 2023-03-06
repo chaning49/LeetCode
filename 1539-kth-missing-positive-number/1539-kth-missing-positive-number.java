@@ -2,16 +2,17 @@ import java.util.stream.IntStream;
 
 class Solution {
     public int findKthPositive(int[] arr, int k) {
-        int i = 0;
-        int n = 1;
+        int left = 0;
+        int right = arr.length;
         
-        while (k > i) {
-            int finalN = n;
-            if (IntStream.of(arr).noneMatch(x -> x == finalN)) 
-                i++;
-            n++;
+        while (left < right) {
+            int mid = (left + right) / 2;
+            if (arr[mid] - mid - 1 < k)
+                left = mid + 1;
+            else
+                right = mid;
         }
         
-        return n - 1;
+        return left + k;
     }
 }
