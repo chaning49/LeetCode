@@ -1,9 +1,8 @@
 class Solution {
     public long minimumTime(int[] time, int totalTrips) {
-        long ans = 0L;
-        
         long start = 1L;
-        long end = Arrays.stream(time).max().getAsInt() * (long) totalTrips;
+        // long end = Arrays.stream(time).max().getAsInt() * (long) totalTrips;
+        long end = (long) 1e14;
         
         while (start < end) {
             long mid = (start + end) / 2;
@@ -21,7 +20,7 @@ class Solution {
     private long makeTotal(int[] time, long mid) {
         long tot = 0L;
         for (int t : time) {
-            tot += mid / t;
+            tot += mid / (long) t;
         }
         return tot;
     }
