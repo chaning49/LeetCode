@@ -8,3 +8,5 @@
 - 나는 문제에서 제시된 조건을 기반으로 범위를 설정해주었다. (물론 주석 처리한 부분처럼 배열의 최댓값과 totalTrips를 곱해주는 것이 더 나은 방법이다.)
 - 이진 탐색으로 시작해서 totalTrips에 가까워지는 값을 찾아야 한다. 그래서 나는 makeTotal이라는 메소드를 만들어 time 배열에 있는 모든 값으로 mid를 나눈 값을 더한 값(value)과 totalTrips를 비교해주면서 범위를 좁혀나갔다.
 - Thx [jongwuner](https://github.com/jongwuner) :)
+
+![알고리즈무-20](https://user-images.githubusercontent.com/79316402/223693565-ca8115d4-8bcc-4c30-bbe8-1b78667b3e89.jpg)
