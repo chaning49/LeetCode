@@ -13,7 +13,6 @@ public class Solution {
     public ListNode detectCycle(ListNode head) {
         ListNode turtle = head;
         ListNode rabbit = head;
-        boolean hasCycle = false;
         
         while (rabbit != null && rabbit.next != null) {
             turtle = turtle.next;
