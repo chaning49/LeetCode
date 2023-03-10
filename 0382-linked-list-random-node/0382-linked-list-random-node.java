@@ -10,6 +10,7 @@
  */
 class Solution {
     private ListNode head;
+    private Random rand = new Random();
     
     public Solution(ListNode head) {
         this.head = head;
@@ -31,7 +32,7 @@ class Solution {
             findNode = findNode.next;
         }
         
-        int idx = (int) (Math.random() * len);
+        int idx = rand.nextInt(len);
         
         return arr[idx].val;
     }
