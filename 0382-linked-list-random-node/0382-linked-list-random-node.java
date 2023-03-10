@@ -17,16 +17,13 @@ class Solution {
     }
     
     public int getRandom() {
-        ListNode findNode = head;
-        int ans = 0;
+        int ans = -1;
         int i = 1;
-        while (findNode != null) {
+
+        for (ListNode curr = head; curr != null; curr = curr.next, ++i)
             if (rand.nextInt(i) == i - 1)
-                ans = findNode.val;
-            findNode = findNode.next;
-            i++;
-        }
-        
+                ans = curr.val;
+
         return ans;
     }
 }
