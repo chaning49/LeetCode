@@ -10,6 +10,7 @@
  */
 class Solution {
     private ListNode head;
+    
     public Solution(ListNode head) {
         this.head = head;
     }
