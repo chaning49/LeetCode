@@ -17,14 +17,24 @@ class Solution {
     }
     
     public int getRandom() {
-        int ans = -1;
-        int i = 1;
-
-        for (ListNode curr = head; curr != null; curr = curr.next, ++i)
-            if (rand.nextInt(i) == i - 1)
-                ans = curr.val;
-
-        return ans;
+        ListNode findNode = head;
+        int len = 0;
+        while (findNode != null) {
+            len++;
+            findNode = findNode.next;
+        }
+        
+        ListNode[] arr = new ListNode[len];
+        findNode = head;
+        
+        for (int i = 0; i < len; i++) {
+            arr[i] = findNode;
+            findNode = findNode.next;
+        }
+        
+        int idx = rand.nextInt(len);
+        
+        return arr[idx].val;
     }
 }
 
