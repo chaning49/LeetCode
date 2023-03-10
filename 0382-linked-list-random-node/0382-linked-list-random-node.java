@@ -18,23 +18,16 @@ class Solution {
     
     public int getRandom() {
         ListNode findNode = head;
-        int len = 0;
-        while (findNode != null && findNode != null) {
-            len++;
+        int ans = 0;
+        int i = 1;
+        while (findNode != null) {
+            if (rand.nextInt(i) == i - 1)
+                ans = findNode.val;
             findNode = findNode.next;
+            i++;
         }
         
-        ListNode[] arr = new ListNode[len];
-        findNode = head;
-        
-        for (int i = 0; i < len; i++) {
-            arr[i] = findNode;
-            findNode = findNode.next;
-        }
-        
-        int idx = rand.nextInt(len);
-        
-        return arr[idx].val;
+        return ans;
     }
 }
 
