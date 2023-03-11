@@ -8,18 +8,21 @@
 - 만약 node가 null이거나 다음 node가 null이면 null을 리턴한다.
 - node를 ListNode 형태로 리스트에 추가하면 각 노드의 주소값이 저장되기 때문에 val가 같다고 하더라도 주소값으로 노드의 위치를 찾을 수 있기 때문에 정상 동작한다.
 ```java
+// 2번째 방법
 public class Solution {
-public ListNode detectCycle(ListNode head) {
-List<ListNode> nodes = new ArrayList<>();
-ListNode node = head;
-do {
-if (node == null || node.next == null)
-return null;
-nodes.add(node);
-node = node.next;
-} while (!nodes.contains(node));
-return nodes.get(nodes.indexOf(node));
-}
+  public ListNode detectCycle(ListNode head) {
+    List<ListNode> nodes = new ArrayList<>();
+    ListNode node = head;
+    
+    do {
+      if (node == null || node.next == null)
+        return null;
+      nodes.add(node);
+      node = node.next;
+    } while (!nodes.contains(node));
+    
+    return nodes.get(nodes.indexOf(node));
+  }
 }
 ```
 - 두 번째 방법으로는 Floyd's Cycle Detection Algorithm(또는 토끼와 거북이 알고리즘)을 이용하기 때문에 O(n)의 시간복잡도를 가지는 알고리즘이다.
