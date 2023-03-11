@@ -23,5 +23,5 @@ return nodes.get(nodes.indexOf(node));
 }
 ```
 - 두 번째 방법으로는 Floyd's Cycle Detection Algorithm(또는 토끼와 거북이 알고리즘)을 이용하기 때문에 O(n)의 시간복잡도를 가지는 알고리즘이다.
--
-- 두 번째 방법으로는 Floyd's Cycle Detection Algorithm(또는 토끼와 거북이 알고리즘)을 이용하기 때문에 O(n)의 시간복잡도를 가지는 알고리즘이다.
+- 한 칸씩 움직이는 turtle과 두 칸씩 움직이는 rabbit을 두어 cycle이 존재하는지 찾아본다. cycle이 존재한다면 turtle과 rabbit이 만나는 순간이 생기고, cycle이 존재하지 않는다면 node나 node.next 값이 null인 경우가 생긴다.
+- cycle이 존재함을 확인하면 turtle을 다시 시작점으로 옮기고 이번에는 turtle과 rabbit을 한 칸씩 이동시켜 만나게 되는 지점이 사이클의 시작점이다. 그 이유는 cycle 내에 특정 위치에 있는 rabbit으로부터 cycle 방향대로 이동한 거리와 head에서부터 cycle의 시작점에 도달하는 거리가 같기 때문이다.
