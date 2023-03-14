@@ -10,3 +10,5 @@
 - dfs를 사용해서 왼쪽의 leaf 노드까지 접근하면서 하나의 숫자로 합친다. 숫자로 합칠 때는 String으로 붙여주는 방법을 사용해볼 생각이다.
 - 직접 해본 결과 int형으로 변환하는 부분을 재귀적으로 처리할 수가 없어서 depth가 깊어질 때마다 10씩 곱한 값에 val를 더할 생각이다.
 - root가 null인 경우를 처리해주고, 해당되지 않으면 sum에는 root.val를 더한 다음 leafnode인지 확인하고 leafnode면 sum을 반환해준다. 아닌 경우에는 children이 있다는 것이므로 좌, 우에 위치한 노드의 dfs 반환값을 더하면서 leafnode까지 내려간다.
+
+![알고리즈무-27](https://user-images.githubusercontent.com/79316402/225074437-3f4e10f1-96b8-429f-8d44-73941c612eba.jpg)
