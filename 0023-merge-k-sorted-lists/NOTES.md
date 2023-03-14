@@ -13,11 +13,18 @@
 ```java
 // Heap을 사용하여 푸는 방법
 class Solution {
-public ListNode mergeKLists(ListNode[] lists) {
-if (lists.length == 0)
-return null;
-Queue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
-for (ListNode list : lists) {
-if (list != null)
-minHeap.offer(list);
+  public ListNode mergeKLists(ListNode[] lists) {
+    if (lists.length == 0)
+      return null;
+      
+    Queue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
+    
+    for (ListNode list : lists) {
+      if (list != null)
+        minHeap.offer(list);
+    }
+  }
 }
+```
+
+![알고리즈무-26](https://user-images.githubusercontent.com/79316402/225074119-a625dee8-9206-407e-8240-b4eb37db8fb6.jpg)
