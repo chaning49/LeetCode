@@ -27,7 +27,7 @@ class Solution {
             queue.offer(node.right);
         }
         
-        while (queue.size() > 0&& queue.peek() == null) {
+        while (queue.size() > 0 && queue.peek() == null) {
             queue.poll();
         }
             
