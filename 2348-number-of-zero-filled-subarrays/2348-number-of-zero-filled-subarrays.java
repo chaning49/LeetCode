@@ -1,7 +1,6 @@
 class Solution {
     public long zeroFilledSubarray(int[] nums) {
         long ans = 0L;
-        boolean isZero = false;
         long n = 0L;
         
         for (int i = 0; i < nums.length; i++) {
