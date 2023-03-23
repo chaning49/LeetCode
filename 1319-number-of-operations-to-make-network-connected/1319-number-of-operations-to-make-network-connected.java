@@ -1,5 +1,6 @@
 class Solution {
     public int makeConnected(int n, int[][] connections) {
+        // 케이블의 개수는 최소 n - 1개여야 하므로 그보다 작은 경우는 -1 반환
         if (connections.length < n - 1)
             return -1;
         
