@@ -16,6 +16,7 @@ class Solution {
             for (int i = 0; i < satList.size(); i++)
                 temp += satList.get(i) * index.get(i);
             ans = Math.max(ans, temp);
+            
             temp = 0;
             satList.remove(0);
             index.remove(index.size() - 1);
