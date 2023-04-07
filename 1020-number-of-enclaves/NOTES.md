@@ -11,7 +11,7 @@
 - **2차원 배열의 합을 구할 때는 행의 합을 stream으로 구하면 간단하다! 하지만 이중 for문을 사용했을 때보다는 시간 복잡도가 다소 증가한다.**
 ​
 ```java
-// stream을 사용하지 않았던 방법 (Runtime: 8ms)
+// stream 방식
 int ans = 0;
 ​
 for (int[] row : grid)
