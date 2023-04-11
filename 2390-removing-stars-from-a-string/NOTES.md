@@ -12,17 +12,5 @@
 - 스택으로 해결해볼까 생각이 든다.
 - 문자열 s를 문자 하나씩 검사해서 * 이외의 문자는 push * 이 나오면 pop 연산을 수행한다.
 - 만약 스택이 비어있는 경우 * 이 나오면 실패로 처리하면 되지만 해당 문제에서는 그런 경우는 고려하지 않는다.
-​
-```
-Stack<String> stack = new Stack<>();
-for (char c : s.toCharArray()) {
-if (c == '*' && !stack.isEmpty())
-stack.pop();
-else
-stack.push(Character.toString(c));
-}
-String ans = "";
-while (!stack.isEmpty())
-ans += stack.pop();
-return ans;
-```
+- 스택, 리스트, 덱 등을 사용하면 시간 복잡도가 상당히 커진다.
+- 그래서 StringBuilder에서 deleteCharAt() 메소드를 사용해서 마지막 원소를 제거해줄 수 있고, 시간 복잡도를 줄일 수 있었다.
