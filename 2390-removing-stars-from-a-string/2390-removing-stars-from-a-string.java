@@ -1,16 +1,16 @@
 class Solution {
     public String removeStars(String s) {
-        List<String> list = new ArrayList<>();
+        Deque<String> dq = new ArrayDeque<>();
         for (String str : s.split("")) {
-            if (str.equals("*") && !list.isEmpty())
-                list.remove(list.size() - 1);
+            if (str.equals("*") && !dq.isEmpty())
+                dq.pollLast();
             else
-                list.add(str);
+                dq.addLast(str);
         }
         
         String ans = "";
-        for (String str : list)
-            ans += str;
+        while (!dq.isEmpty())
+            ans += dq.pollFirst();
         return ans;
     }
 }
