@@ -3,8 +3,8 @@ class Solution {
         List<Integer> stk = new ArrayList<>(pushed.length);
         int idx = 0;
     
-        for (int i = 0; i < pushed.length; i++) {
-            stk.add(pushed[i]);
+        for (int p : pushed) {
+            stk.add(p);
             
             while (!stk.isEmpty() && stk.get(stk.size() - 1) == popped[idx]) {
                 stk.remove(stk.get(stk.size() - 1));
