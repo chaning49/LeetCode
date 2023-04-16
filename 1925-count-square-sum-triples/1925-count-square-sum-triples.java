@@ -1,7 +1,7 @@
 class Solution {
     public int countTriples(int n) {
         int cnt = 0;
-        int ans = 1;
+        int ans = 5;
         while (ans <= n) {
             for (int i = 1; i <= ans; ++i) {
                 for (int j = 1; j <= ans; ++j) {
