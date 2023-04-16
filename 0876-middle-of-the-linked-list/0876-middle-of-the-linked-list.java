@@ -19,9 +19,8 @@ class Solution {
         
         node = head;
         
-        for (int i = 0; i < len / 2; i++) {
+        for (int i = 0; i < len / 2; i++)
             node = node.next;
-        }
         
         return node;
     }
