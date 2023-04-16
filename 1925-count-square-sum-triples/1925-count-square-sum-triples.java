@@ -1,15 +1,13 @@
 class Solution {
     public int countTriples(int n) {
         int cnt = 0;
-        int ans = 5;
-        while (ans <= n) {
-            for (int i = 1; i <= ans; ++i) {
-                for (int j = 1; j <= ans; ++j) {
-                    if (i * i + j * j == ans * ans)
-                        ++cnt;
-                }
+        for (int i = 1; i <= n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                int sq = i * i + j * j;
+                int tr = (int) Math.sqrt(sq);
+                if (tr * tr == sq && tr <= n)
+                    cnt += 2;
             }
-            ++ans;
         }
         
         return cnt;
