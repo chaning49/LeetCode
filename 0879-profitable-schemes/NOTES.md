@@ -19,7 +19,7 @@ k = 0,
 i = 3 -> 2
 j = 5 - 2 = 3 -> 2
 i + p = 5,
+​
 newProfit = min(5, 3) = 3 -> min(4, 3) = 3
 dp[newProfit][j + g] = dp[3][5]
 ​
-newProfit = min(5, 3) = 3 -> min(4, 3) = 3
