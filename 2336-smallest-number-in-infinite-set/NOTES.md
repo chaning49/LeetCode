@@ -7,5 +7,6 @@
 - void addBack(int num)은 무한 집합의 맨 뒤에 양의 정수를 하나 추가하고, 만약 무한 집합에 이미 포함되어 있다면 아무 동작도 하지 않는다.
 ​
 ### 문제 해결 과정
-- SmallestInfiniteSet()은 SmallestInfiniteSet의 인스턴스를 생성해주는 용도로 사용한다.
--
+- SmallestInfiniteSet()은 SmallestInfiniteSet의 인스턴스를 생성해주는 용도로 사용한다. 1부터 1000까지의 값을 모두 넣어준다.
+- int popSmallest()에서는 가장 작은 값을 제거하고 반환한다.
+- addBack(int num)은 num이 포함되어 있는 경우에만 값을 추가하고, 오름차순으로 정렬해준다.
