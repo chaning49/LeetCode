@@ -1,18 +1,12 @@
 class Solution {
     public double average(int[] salary) {
-        double ans = 0.0;
+        Arrays.sort(salary);
         
-        int maxNum = Arrays.stream(salary).max().getAsInt();
-        int minNum = Arrays.stream(salary).min().getAsInt();
-        
+        double sum = 0.0;
         for (int sal : salary) {
-            if (maxNum == sal || minNum == sal)
-                continue;
-            ans += (double) sal;
+            sum += sal;
         }
         
-        ans /= (double) (salary.length - 2);
-        
-        return ans;
+        return (sum - (salary[0] + salary[salary.length - 1])) / (double) (salary.length - 2);
     }
 }
