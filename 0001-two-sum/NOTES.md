@@ -11,3 +11,19 @@
 - 일단 완전 탐색부터 사용해보자. 이 방법은 정답이지만 O(N^2)이므로 최적화된 답 또한 생각해보아야 한다.
 - Map에 해당 인덱스와 매칭되는 값을 저장한다. 이 때, 값을 key, 인덱스를 value로 두어서 target - nums[i]에 해당하는 key가 존재하는지 여부를 찾으면 정답을 알 수 있다.
 - 기존 코드
+```java
+class Solution {
+public int[] twoSum(int[] nums, int target) {
+for (int i = 0; i < nums.length; i++) {
+for (int j = i + 1; j < nums.length; j++) {
+if (nums[i] + nums[j] == target)
+return new int[] {i, j};
+}
+}
+return new int[] {};
+}
+}
+```
+​
+- 최적화 코드
+​
